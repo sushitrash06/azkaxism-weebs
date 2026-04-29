@@ -149,7 +149,6 @@ export default function Skills() {
 
         {/* Main 3-Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Left Column - Combat Stats */}
           <div className="lg:col-span-3 order-2 lg:order-1">
             <h3 className="font-comic text-2xl text-comic-cyan mb-6 flex items-center gap-2">
               <Code className="size-5" /> MASTERIES
