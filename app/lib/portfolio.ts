@@ -1,0 +1,100 @@
+export const portfolioData = {
+  "personal": {
+    "name": "AZKA ANDYA SAFIRA",
+    "nickname": "BEKASYUUUN",
+    "role": "Frontend Engineer",
+    "level": "99",
+    "location": "Bekasi, Jawa Barat, Indonesia",
+    "email": "azkaandyaaa@gmail.com",
+    "linkedIn": "https://linkedIn.com/azkaxism",
+    "motto": "Kerja cerdas, badan sehat, dompet aman, hati tenang. ❤️",
+    "mantra": "Gas Terus!",
+    "status": "Lv. 99 Frontend Dev"
+  },
+  "traits": [
+    "Straightforward",
+    "Detail Oriented",
+    "Practical",
+    "Disciplined",
+    "Bekasi Banget"
+  ],
+  "stats": {
+    "combat": [
+      { "label": "React/Next.js", "value": 10, "level": "MAX", "color": "bg-comic-cyan", "icon": "Zap" },
+      { "label": "State Mgmt", "value": 9, "level": "92", "color": "bg-comic-magenta", "icon": "Target" },
+      { "label": "Modern CSS", "value": 9, "level": "95", "color": "bg-comic-yellow", "icon": "Flame" },
+      { "label": "TypeScript", "value": 8, "level": "88", "color": "bg-white", "icon": "Shield" }
+    ],
+    "system": [
+      { "label": "Node/Express", "value": 8, "level": "80", "color": "bg-comic-magenta", "icon": "Flame" },
+      { "label": "GraphQL", "value": 7, "level": "75", "color": "bg-comic-cyan", "icon": "Zap" },
+      { "label": "Mobile (RN/KT)", "value": 8, "level": "84", "color": "bg-comic-yellow", "icon": "Smartphone" },
+      { "label": "Cloud/DevOps", "value": 6, "level": "60", "color": "bg-white", "icon": "Cloud" }
+    ],
+    "buffs": [
+      { "name": "Meme Specialist", "value": "MAX LUCK", "color": "text-comic-yellow", "icon": "SmilePlus" },
+      { "name": "Bekasi Residency", "value": "+100 Heat Res", "color": "text-comic-cyan" },
+      { "name": "Gymrat Mode", "value": "+50 Stamina", "color": "text-comic-magenta" }
+    ]
+  },
+  "experience": [
+    {
+      "company": "PT Metrodata Electronics Tbk",
+      "role": "Associate Application Developer (Frontend)",
+      "period": "Nov 2024 – Present",
+      "desc": "Leading frontend efforts for PT JASA MARGA projects. Slicing UI/UX with Next.js and collaborating with backend wizards.",
+      "color": "bg-comic-cyan"
+    },
+    {
+      "company": "Sapphire Skyscraper (Pte Ltd)",
+      "role": "Frontend Developer",
+      "period": "Aug 2023 - Nov 2024",
+      "desc": "Managed 'Pinjam win win' loan app. Led a team of 3-6 members. Optimized performance for Southeast Asian markets.",
+      "color": "bg-comic-magenta"
+    },
+    {
+      "company": "PT Barito Integra Teknologi",
+      "role": "Frontend Developer",
+      "period": "Feb 2022- Aug 2023",
+      "desc": "Worked on multiple projects including Barito Revamp and WYZ System for Bank DKI. Mastering GraphQL and Next.js.",
+      "color": "bg-comic-yellow"
+    },
+    {
+      "company": "Dattabot",
+      "role": "Frontend Engineer",
+      "period": "Feb 2021- Feb 2022",
+      "desc": "Big data visualization for Indonesian analytics. Slicing complex dashboards and register portals.",
+      "color": "bg-comic-paper text-comic-black"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Justcv.me",
+      "year": "2024",
+      "stack": ["React.js", "Tailwind", "Zustand"],
+      "desc": "Leading platform for publishing resumes. Sliced designs and integrated APIs with smooth state management."
+    },
+    {
+      "title": "Wibuverse",
+      "year": "2022",
+      "stack": ["Next.js", "Material UI", "Redux"],
+      "desc": "The ultimate space for wibus. High-energy interface for content discovery and community interaction."
+    },
+    {
+      "title": "GBSystem",
+      "year": "2021",
+      "stack": ["React Native", "Axios", "Material UI"],
+      "desc": "Admin dashboard for Amora Photo. A robust system for data handling and internal management."
+    },
+    {
+      "title": "The Reptile",
+      "year": "2020",
+      "stack": ["Node.js", "Express", "MySQL", "React.js"],
+      "desc": "Full-stack application for reptile enthusiasts. API development and UI implementation from scratch."
+    }
+  ],
+  "profile": {
+    "likes": ["✨ CLEAN CODE", "🏋️ PUSH DAY", "🔥 SPICY MEMES", "🍕 CHEAT MEALS"],
+    "dislikes": ["🚫 SPAGHETTI CODE", "🚫 SKIP LEG DAY", "🚫 SLOW INTERNET", "🚫 BEKASI TRAFFIC"]
+  }
+}

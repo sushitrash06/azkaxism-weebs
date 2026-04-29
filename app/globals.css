@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Bangers&family=Permanent+Marker&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Grotesk", ui-monospace, SFMono-Regular, monospace;
+  --font-comic: "Bangers", system-ui, sans-serif;
+  --font-marker: "Permanent Marker", system-ui, sans-serif;
+  
+  --color-comic-yellow: #FFD21E;
+  --color-comic-magenta: #FF006E;
+  --color-comic-cyan: #3A86FF;
+  --color-comic-black: #1A1A1A;
+  --color-comic-paper: #FDF6E3;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-comic-paper);
+    color: var(--color-comic-black);
+    font-family: var(--font-sans);
+  }
+}
+
+.comic-border {
+  border-width: 4px;
+  border-color: var(--color-comic-black);
+  box-shadow: 8px 8px 0px 0px var(--color-comic-black);
+}
+
+.comic-panel {
+  background-color: white;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  border-width: 4px;
+  border-color: var(--color-comic-black);
+  box-shadow: 8px 8px 0px 0px var(--color-comic-black);
+}
+
+.speech-bubble {
+  position: relative;
+  background-color: white;
+  border-width: 2px;
+  border-color: var(--color-comic-black);
+  padding: 0.75rem;
+  border-radius: 1rem;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--color-comic-black);
+}
