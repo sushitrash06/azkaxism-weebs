@@ -278,8 +278,6 @@ export default function Skills() {
             </div>
           </div>
         </div>
-
-        {/* Bottom Charts/Mini Info */}
         <div className="mt-16 pt-12 border-t border-white/10 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white/5 p-6 comic-border">
             <div className="flex justify-between items-center mb-6">
