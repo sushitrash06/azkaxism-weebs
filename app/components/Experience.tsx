@@ -1,117 +1,194 @@
-'use client';
 
-import { motion } from 'motion/react';
-import { MdWork, MdEventNote } from 'react-icons/md';
-import { cn } from '../lib/utils';
-import { Briefcase, Calendar } from 'lucide-react';
+import { Check, ShieldAlert, Award, Star } from "lucide-react";
 
-const experiences = [
-  {
-    company: 'PT Metrodata Electronics Tbk',
-    role: 'Associate Application Developer (Frontend)',
-    period: 'Nov 2024 – Present',
-    desc: 'Leading frontend efforts for PT JASA MARGA projects. Slicing UI/UX with Next.js and collaborating with backend wizards.',
-    color: 'bg-comic-cyan',
-  },
-  {
-    company: 'Sapphire Skyscraper (Pte Ltd)',
-    role: 'Frontend Developer',
-    period: 'Aug 2023 - Nov 2024',
-    desc: 'Managed "Pinjam win win" loan app. Led a team of 3-6 members. Optimized performance for Southeast Asian markets.',
-    color: 'bg-comic-magenta',
-  },
-  {
-    company: 'PT Barito Integra Teknologi',
-    role: 'Frontend Developer',
-    period: 'Feb 2022- Aug 2023',
-    desc: 'Worked on multiple projects including Barito Revamp and WYZ System for Bank DKI. Mastering GraphQL and Next.js.',
-    color: 'bg-comic-yellow',
-  },
-  {
-    company: 'Dattabot',
-    role: 'Frontend Engineer',
-    period: 'Feb 2021- Feb 2022',
-    desc: 'Big data visualization for Indonesian analytics. Slicing complex dashboards and register portals.',
-    color: 'bg-comic-paper text-comic-black',
-  },
-];
+export interface Project {
+  name: string;
+  details: string[];
+}
 
-export default function Experience() {
+export interface Experience {
+  company: string;
+  role: string;
+  period: string;
+  jobResponsibilities: string[];
+  skills: string[];
+  projects: Project[];
+  color: string; // Tailwinds colors or custom comic colors
+  mangaSound?: string; // e.g. "BAM!", "WHOOSH!", "SHING!"
+  questLevel: number;
+  expGranted: number;
+}
+
+export interface QuestCardProps {
+  quest: Experience;
+  isActiveQuest: boolean;
+  checkedTasks: { [key: string]: boolean };
+  onToggleTask: (company: string, index: number, costExp: number) => void;
+  onInteractTalk: (msg: string, expression: "happy" | "thinking" | "excited" | "coding") => void;
+  key?: any;
+}
+
+export default function Experience({
+  quest,
+  isActiveQuest,
+  onToggleTask,
+  onInteractTalk
+}: QuestCardProps) {
+
+
+  const getMangaActionSound = (sound: string | undefined) => {
+    return sound || "BAM!";
+  };
+
   return (
-    <section id="experience" className="py-12 md:py-20 px-4 md:px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row items-start md:items-end gap-2 md:gap-6 mb-12 md:mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="font-comic text-5xl sm:text-7xl md:text-9xl uppercase leading-[0.8]"
-          >
-            QUEST <span className="text-comic-magenta">LOG</span>
-          </motion.h2>
-          <div className="h-2 md:h-3 w-20 md:w-auto md:flex-1 bg-comic-black mb-1 md:mb-2" />
+    <div className="m-10 brutal-card p-6 bg-white border-4 border-slate-900 rounded-3xl relative overflow-hidden transition-all duration-200">
+
+      {/* Absolute Header Comic Sound Badge */}
+      <div className={`absolute top-4 right-4 ${quest.color} border-2 border-slate-900 px-3 py-1 text-xs font-comic font-black uppercase text-slate-900 shadow-[2px_2px_0px_rgba(18,18,20,1)] tracking-widest transform rotate-6 select-none animate-pulse`}>
+        {getMangaActionSound(quest.mangaSound)}
+      </div>
+
+      {/* Quest Status Indicators */}
+      <div className="flex gap-2.5 items-center mb-4">
+        <span className={`text-[10px] font-game py-1 px-3 border-2 border-slate-900 rounded-full shadow-[2.5px_2.5px_0px_#121214] select-none ${isActiveQuest
+          ? "bg-rose-500 text-white font-bold animate-pulse"
+          : "bg-emerald-400 text-slate-950 font-bold"
+          }`}>
+          {isActiveQuest ? "⚔️ ACTIVE MAIN QUEST" : "🏆 QUEST SUCCESS"}
+        </span>
+        <span className="font-mono text-xs text-slate-500 font-bold">{quest.period}</span>
+      </div>
+
+      {/* Company Name & Role Info */}
+      <div className="mb-5 border-b-2 border-dashed border-slate-200 pb-4">
+        <h3 className="font-comic text-3xl text-slate-900 tracking-wide uppercase leading-tight mb-0.5">
+          {quest.company}
+        </h3>
+        <p className="font-game text-[11px] text-indigo-600 font-extrabold flex items-center gap-1">
+          <span>🛡️ CLASS ROLE:</span>
+          <span className="text-slate-900">{quest.role}</span>
+        </p>
+      </div>
+
+      {/* Rewards Row */}
+      <div className="bg-amber-50 border-2 border-slate-900 rounded-2xl p-3 mb-5 flex flex-wrap justify-between items-center gap-2 shadow-[2px_2px_0px_#121214]">
+        <div className="flex items-center gap-1.5">
+          <span className="font-game text-[9px] text-slate-700">QUEST REWARDS:</span>
         </div>
-        
-        <div className="relative">
-          {/* Vertical Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-2 md:w-3 bg-comic-black -translate-x-1/2 z-0" />
-          
-          <div className="space-y-12 md:space-y-0 relative z-10">
-            {experiences.map((exp, idx) => (
-              <div key={exp.company} className={cn(
-                "flex flex-col md:flex-row items-center w-full md:min-h-[300px]",
-                idx % 2 === 0 ? "md:flex-row-reverse" : ""
-              )}>
-                {/* Content Panel */}
-                <motion.div
-                  initial={{ opacity: 0, x: idx % 2 === 0 ? 50 : -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="w-full md:w-[45%] ml-8 md:ml-0"
-                >
-                  <div className={cn("comic-panel p-0 group overflow-hidden")}>
-                    <div className={cn("px-4 md:px-6 py-3 md:py-4 border-b-4 border-comic-black flex justify-between items-center text-comic-black", exp.color)}>
-                       <span className="font-comic text-xl md:text-2xl tracking-tighter uppercase line-clamp-1">{exp.company}</span>
-                       <Briefcase className="w-5 h-5 md:w-6 md:h-6 shrink-0 ml-2" />
-                    </div>
-                    <div className="p-4 md:p-6">
-                      <div className="flex items-center gap-2 mb-3 md:mb-4 text-[10px] md:text-xs font-bold font-mono tracking-widest text-comic-black/60 uppercase">
-                        <Calendar className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                        {exp.period}
-                      </div>
-                      <h3 className="font-comic text-2xl md:text-3xl mb-3 md:mb-4 group-hover:text-comic-magenta transition-colors line-clamp-2 md:line-clamp-none">
-                        {exp.role}
-                      </h3>
-                      <p className="font-mono text-xs md:text-sm leading-relaxed mb-4 md:mb-6 opacity-80">
-                        {exp.desc}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Timeline Circle Marker */}
-                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 md:w-12 md:h-12 bg-white border-4 border-comic-black rounded-full flex items-center justify-center z-20 shadow-[4px_4px_0px_0px_#1A1A1A]">
-                  <div className={cn("w-3 h-3 md:w-5 md:h-5 rounded-full", exp.color.split(' ')[0])} />
-                </div>
-
-                {/* Spacer for the other side */}
-                <div className="hidden md:block md:w-[45%]" />
-              </div>
-            ))}
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1 font-mono text-xs font-bold text-emerald-600">
+            <span>EXP +{quest.expGranted}</span>
           </div>
-          
-          {/* Final Flag Marker */}
-          <div className="absolute left-4 md:left-1/2 bottom-0 -translate-x-1/2 translate-y-full mt-8 flex flex-col items-center">
-             <motion.div 
-               animate={{ rotate: [-2, 2, -2] }}
-               transition={{ duration: 2, repeat: Infinity }}
-               className="bg-comic-magenta text-white px-4 py-2 comic-border font-comic text-2xl uppercase whitespace-nowrap"
-             >
-               BOSS STAGE NEARBY?
-             </motion.div>
+          <div className="flex items-center gap-1 font-mono text-xs font-bold text-amber-500">
+            <span>GOLD +{quest.questLevel * 10}g</span>
+          </div>
+          <div className="flex items-center gap-1 font-mono text-xs font-bold text-rose-500">
+            <span>REP +{quest.questLevel}</span>
           </div>
         </div>
       </div>
-    </section>
+
+      {/* Quest Objectives (Job Responsibilities) */}
+      <div className="mb-6">
+        <h4 className="font-game text-[10px] text-slate-900 mb-3.5 flex items-center gap-1.5 font-bold uppercase select-none">
+          <span>📜 QUEST ACHIEVEMENTS & CONTRIBUTIONS:</span>
+        </h4>
+        <ul className="space-y-3.5 pl-1">
+          {quest.jobResponsibilities.map((responsibility, idx) => {
+            return (
+              <li
+                key={idx}
+                className="font-sans text-stone-800 text-xs sm:text-[13px] leading-relaxed relative pl-6 flex items-start gap-1"
+              >
+                {/* Cute anime star bullet marker */}
+                <span className="absolute left-0 top-1 text-rose-500 font-game text-[10px] animate-pulse">★</span>
+                <p className="font-semibold text-slate-700">
+                  {responsibility}
+                </p>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      {/* Satisfying Claim/Complete Quest Guild Button */}
+      <div className="mt-5 mb-5 bg-slate-50 border-2 border-slate-900 rounded-2xl p-4 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <div className="text-center sm:text-left">
+          <span className="text-[10px] font-game text-indigo-600 font-extrabold uppercase block select-none">GUILD COMMISSION RECORD:</span>
+          <span className="text-xs font-sans text-slate-500 font-semibold italic">Successfully resolved and delivered system features</span>
+        </div>
+        <button
+          onClick={() => {
+            onToggleTask(quest.company, 0, quest.expGranted);
+            onInteractTalk(
+              `Sugoi! You claimed the rewards for PT ${quest.company}! Total +${quest.expGranted} EXP and corresponding Guild gold claimed successfully! 🎆`,
+              "excited"
+            );
+          }}
+          className="w-full sm:w-auto px-4 py-2 brutal-btn bg-emerald-400 text-slate-950 font-game text-[9px] font-black rounded-xl hover:bg-emerald-500 flex items-center justify-center gap-1"
+        >
+          <span>CLAIM QUEST DELIVERABLES ⚔️</span>
+        </button>
+      </div>
+
+      {/* BOSS RAIDS (Projects associated with company) */}
+      {quest.projects && quest.projects.length > 0 && (
+        <div className="mt-6 border-t-2 border-dashed border-slate-200 pt-5">
+          <h4 className="font-game text-[10px] text-slate-900 mb-3 flex items-center gap-1.5 font-bold uppercase select-none">
+            <span>🔥 RAID BOSSES DEFEATED:</span>
+          </h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {quest.projects.map((proj, projIdx) => (
+              <div
+                key={projIdx}
+                className="bg-indigo-950 border-4 border-slate-900 rounded-2xl p-4 text-white relative flex flex-col justify-between overflow-hidden shadow-[2px_2px_0px_#121214]"
+              >
+
+                {/* Grid Overlay inside Boss Panel */}
+                <div className="absolute inset-0 bg-repeat bg-opacity-15 manga-speed-lines z-0 opacity-15"></div>
+
+                <div className="relative z-10 w-full">
+                  <div className="flex items-center gap-2 mb-2 w-full justify-between">
+                    <span className="font-game text-[8px] tracking-wide text-rose-400 font-extrabold uppercase animate-pulse">
+                      👿 LEVEL {quest.questLevel * 2} BOSS ELITE
+                    </span>
+                    <span className="font-game text-[8px] text-amber-300">HP: 100% DEFEATED</span>
+                  </div>
+
+                  <h5 className="font-comic text-xl text-yellow-300 leading-tight mb-2 tracking-wide uppercase">
+                    {proj.name}
+                  </h5>
+
+                  <div className="space-y-1.5 mb-3">
+                    {proj.details.map((detail, detIdx) => (
+                      <div key={detIdx} className="flex gap-2 items-start text-[11px] leading-relaxed text-slate-300">
+                        <span className="text-amber-400 mt-0.5">✦</span>
+                        <p>{detail}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="relative z-10 mt-2 bg-rose-500 text-rose-950 border-2 border-slate-900 py-1 px-2.5 rounded-lg text-[9px] font-game text-center font-bold">
+                  ⚔️ SOLO RAID CLEAR BY {quest.role.toUpperCase()}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Tag skills utilized in this Quest line */}
+      <div className="mt-5 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
+        {quest.skills.map((s, sIdx) => (
+          <span
+            key={sIdx}
+            className="font-mono text-[10px] bg-slate-100 text-slate-800 py-1 px-2 border border-slate-300 rounded font-bold"
+          >
+            # {s}
+          </span>
+        ))}
+      </div>
+    </div>
   );
 }
-

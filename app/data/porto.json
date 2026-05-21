@@ -20,81 +20,319 @@
   ],
   "stats": {
     "combat": [
-      { "label": "React/Next.js", "value": 10, "level": "MAX", "color": "bg-comic-cyan", "icon": "Zap" },
-      { "label": "State Mgmt", "value": 9, "level": "92", "color": "bg-comic-magenta", "icon": "Target" },
-      { "label": "Modern CSS", "value": 9, "level": "95", "color": "bg-comic-yellow", "icon": "Flame" },
-      { "label": "TypeScript", "value": 8, "level": "88", "color": "bg-white", "icon": "Shield" }
+      {
+        "label": "React/Next.js",
+        "value": 10,
+        "level": "MAX",
+        "color": "bg-comic-cyan",
+        "icon": "Zap"
+      },
+      {
+        "label": "State Mgmt",
+        "value": 9,
+        "level": "92",
+        "color": "bg-comic-magenta",
+        "icon": "Target"
+      },
+      {
+        "label": "Modern CSS",
+        "value": 9,
+        "level": "95",
+        "color": "bg-comic-yellow",
+        "icon": "Flame"
+      },
+      {
+        "label": "TypeScript",
+        "value": 8,
+        "level": "88",
+        "color": "bg-white",
+        "icon": "Shield"
+      }
     ],
     "system": [
-      { "label": "Node/Express", "value": 8, "level": "80", "color": "bg-comic-magenta", "icon": "Flame" },
-      { "label": "GraphQL", "value": 7, "level": "75", "color": "bg-comic-cyan", "icon": "Zap" },
-      { "label": "Mobile (RN/KT)", "value": 8, "level": "84", "color": "bg-comic-yellow", "icon": "Smartphone" },
-      { "label": "Cloud/DevOps", "value": 6, "level": "60", "color": "bg-white", "icon": "Cloud" }
+      {
+        "label": "Node/Express",
+        "value": 8,
+        "level": "80",
+        "color": "bg-comic-magenta",
+        "icon": "Flame"
+      },
+      {
+        "label": "GraphQL",
+        "value": 7,
+        "level": "75",
+        "color": "bg-comic-cyan",
+        "icon": "Zap"
+      },
+      {
+        "label": "Mobile (RN/KT)",
+        "value": 8,
+        "level": "84",
+        "color": "bg-comic-yellow",
+        "icon": "Smartphone"
+      },
+      {
+        "label": "Cloud/DevOps",
+        "value": 6,
+        "level": "60",
+        "color": "bg-white",
+        "icon": "Cloud"
+      }
     ],
     "buffs": [
-      { "name": "Meme Specialist", "value": "MAX LUCK", "color": "text-comic-yellow", "icon": "SmilePlus" },
-      { "name": "Bekasi Residency", "value": "+100 Heat Res", "color": "text-comic-cyan" },
-      { "name": "Gymrat Mode", "value": "+50 Stamina", "color": "text-comic-magenta" }
+      {
+        "name": "Meme Specialist",
+        "value": "MAX LUCK",
+        "color": "text-comic-yellow",
+        "icon": "SmilePlus"
+      },
+      {
+        "name": "Bekasi Residency",
+        "value": "+100 Heat Res",
+        "color": "text-comic-cyan"
+      },
+      {
+        "name": "Gymrat Mode",
+        "value": "+50 Stamina",
+        "color": "text-comic-magenta"
+      }
     ]
   },
   "experience": [
     {
-      "company": "PT Metrodata Electronics Tbk",
-      "role": "Associate Application Developer (Frontend)",
-      "period": "Nov 2024 – Present",
-      "desc": "Leading frontend efforts for PT JASA MARGA projects. Slicing UI/UX with Next.js and collaborating with backend wizards.",
-      "color": "bg-comic-cyan"
+      "company": "PT Metrodata Electronics, Tbk",
+      "role": "Frontend Engineer",
+      "period": "Oct 2024 – Present",
+      "jobResponsibilities": [
+        "Managed frontend development for PT Jasa Marga projects",
+        "Translated UI/UX designs into responsive web interfaces using Next.js",
+        "Collaborated with backend developers to integrate APIs and ensure smooth data flow",
+        "Handled full development lifecycle including development, testing, UAT, deployment, and maintenance",
+        "Conducted system testing, issue tracking, and troubleshooting",
+        "Managed deployment pipelines using Jenkins and version control with Git",
+        "Analyzed and resolved application performance and dependency issues"
+      ],
+      "skills": [
+        "React.js",
+        "Next.js",
+        "Vite",
+        "Google Analytics",
+        "Jenkins",
+        "Git"
+      ],
+      "projects": [
+        {
+          "name": "JM Mudik (Mudik Gratis Jasa Marga Application)",
+          "details": [
+            "Developed and maintained a large-scale public registration platform",
+            "Built responsive registration, confirmation, and check-in flows",
+            "Implemented complex business logic including quota limits and family validation",
+            "Integrated REST APIs and synchronized frontend-backend data flow",
+            "Developed participant monitoring dashboards"
+          ]
+        },
+        {
+          "name": "Monitoring Audit System",
+          "details": [
+            "Developed internal audit tracking and reporting system",
+            "Built dashboards, filtering systems, and data tables",
+            "Optimized performance for large datasets"
+          ]
+        }
+      ],
+      "color": "bg-cyan-400",
+      "mangaSound": "BAM!",
+      "questLevel": 80,
+      "expGranted": 2500
     },
     {
-      "company": "Sapphire Skyscraper (Pte Ltd)",
-      "role": "Frontend Developer",
-      "period": "Aug 2023 - Nov 2024",
-      "desc": "Managed 'Pinjam win win' loan app. Led a team of 3-6 members. Optimized performance for Southeast Asian markets.",
-      "color": "bg-comic-magenta"
+      "company": "Sapphire Skyscraper Financial Technology Pte Ltd",
+      "role": "Frontend Engineer",
+      "period": "Oct 2023 – Oct 2024",
+      "jobResponsibilities": [
+        "Managed frontend development for financial technology applications",
+        "Developed responsive web and mobile interfaces using Vue.js, Next.js, and Kotlin",
+        "Integrated APIs and ensured real-time data synchronization",
+        "Led a frontend team of 3–6 members and maintained QA standards",
+        "Conducted testing, debugging, and issue tracking post-deployment",
+        "Built reusable and scalable frontend components",
+        "Collaborated with QA, backend, and product teams"
+      ],
+      "skills": [
+        "React.js",
+        "Vue.js",
+        "Next.js",
+        "Kotlin",
+        "Jotai",
+        "Google Analytics",
+        "Jenkins",
+        "Git"
+      ],
+      "projects": [
+        {
+          "name": "Pinjam Win Win (Loan Application Platform)",
+          "details": [
+            "Developed web and mobile interfaces for loan services",
+            "Integrated APIs and ensured data consistency across platforms",
+            "Led frontend team and maintained code quality standards"
+          ]
+        }
+      ],
+      "color": "bg-rose-400",
+      "mangaSound": "SHING!",
+      "questLevel": 75,
+      "expGranted": 2000
     },
     {
       "company": "PT Barito Integra Teknologi",
       "role": "Frontend Developer",
-      "period": "Feb 2022- Aug 2023",
-      "desc": "Worked on multiple projects including Barito Revamp and WYZ System for Bank DKI. Mastering GraphQL and Next.js.",
-      "color": "bg-comic-yellow"
+      "period": "Feb 2022 – Oct 2023",
+      "jobResponsibilities": [
+        "Developed frontend applications using React.js, Next.js, and TypeScript",
+        "Integrated APIs using GraphQL for efficient data handling",
+        "Maintained reusable components and ensured code quality through reviews",
+        "Managed Git workflows and supported AWS deployment processes",
+        "Collaborated with product teams for technical implementation"
+      ],
+      "skills": [
+        "React.js",
+        "Next.js",
+        "React Native",
+        "TypeScript",
+        "GraphQL",
+        "Redux",
+        "React Query",
+        "Tailwind CSS",
+        "AWS"
+      ],
+      "projects": [
+        {
+          "name": "Barito Revamp (CMS Landing Page)",
+          "details": [
+            "Developed SEO-optimized landing page using Next.js and TypeScript",
+            "Integrated backend services and deployed to AWS"
+          ]
+        },
+        {
+          "name": "WYZ System / Bank DKI (UMKM Loan Application)",
+          "details": [
+            "Built web and mobile applications using React.js and React Native",
+            "Integrated GraphQL APIs and managed application data flow"
+          ]
+        },
+        {
+          "name": "Internal CRM System",
+          "details": [
+            "Developed scalable web and mobile CRM applications",
+            "Focused on reusable components and maintainable architecture"
+          ]
+        },
+        {
+          "name": "Hyundai HSE Application",
+          "details": [
+            "Developed health and safety compliance system",
+            "Ensured application reliability and data accuracy"
+          ]
+        }
+      ],
+      "color": "bg-amber-400",
+      "mangaSound": "WHOOSH!",
+      "questLevel": 60,
+      "expGranted": 1800
     },
     {
       "company": "Dattabot",
-      "role": "Frontend Engineer",
-      "period": "Feb 2021- Feb 2022",
-      "desc": "Big data visualization for Indonesian analytics. Slicing complex dashboards and register portals.",
-      "color": "bg-comic-paper text-comic-black"
+      "role": "Frontend Developer",
+      "period": "Feb 2021 – Feb 2022",
+      "jobResponsibilities": [
+        "Developed web and mobile frontend applications using React.js and React Native",
+        "Integrated APIs and managed frontend-backend data flow",
+        "Assisted Git management, deployment, and code review processes",
+        "Maintained and improved application performance continuously"
+      ],
+      "skills": [
+        "React.js",
+        "React Native",
+        "Material UI",
+        "Axios",
+        "Redux"
+      ],
+      "projects": [
+        {
+          "name": "Sincana Dashboard (Kejagung)",
+          "details": [
+            "Developed dashboard with API integration and data visualization"
+          ]
+        },
+        {
+          "name": "Register Portal (Puspresnas)",
+          "details": [
+            "Built web and mobile registration platform",
+            "Managed frontend-to-backend data flow"
+          ]
+        }
+      ],
+      "color": "bg-emerald-400 text-slate-900",
+      "mangaSound": "KRAK!",
+      "questLevel": 45,
+      "expGranted": 1200
     }
   ],
   "projects": [
     {
       "title": "Justcv.me",
       "year": "2024",
-      "stack": ["React.js", "Tailwind", "Zustand"],
+      "stack": [
+        "React.js",
+        "Tailwind",
+        "Zustand"
+      ],
       "desc": "Leading platform for publishing resumes. Sliced designs and integrated APIs with smooth state management."
     },
     {
       "title": "Wibuverse",
       "year": "2022",
-      "stack": ["Next.js", "Material UI", "Redux"],
+      "stack": [
+        "Next.js",
+        "Material UI",
+        "Redux"
+      ],
       "desc": "The ultimate space for wibus. High-energy interface for content discovery and community interaction."
     },
     {
       "title": "GBSystem",
       "year": "2021",
-      "stack": ["React Native", "Axios", "Material UI"],
+      "stack": [
+        "React Native",
+        "Axios",
+        "Material UI"
+      ],
       "desc": "Admin dashboard for Amora Photo. A robust system for data handling and internal management."
     },
     {
       "title": "The Reptile",
       "year": "2020",
-      "stack": ["Node.js", "Express", "MySQL", "React.js"],
+      "stack": [
+        "Node.js",
+        "Express",
+        "MySQL",
+        "React.js"
+      ],
       "desc": "Full-stack application for reptile enthusiasts. API development and UI implementation from scratch."
     }
   ],
   "profile": {
-    "likes": ["✨ CLEAN CODE", "🏋️ PUSH DAY", "🔥 SPICY MEMES", "🍕 CHEAT MEALS"],
-    "dislikes": ["🚫 SPAGHETTI CODE", "🚫 SKIP LEG DAY", "🚫 SLOW INTERNET", "🚫 BEKASI TRAFFIC"]
+    "likes": [
+      "✨ CLEAN CODE",
+      "🏋️ PUSH DAY",
+      "🔥 SPICY MEMES",
+      "🍕 CHEAT MEALS"
+    ],
+    "dislikes": [
+      "🚫 SPAGHETTI CODE",
+      "🚫 SKIP LEG DAY",
+      "🚫 SLOW INTERNET",
+      "🚫 BEKASI TRAFFIC"
+    ]
   }
 }

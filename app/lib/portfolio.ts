@@ -20,21 +20,96 @@ export const portfolioData = {
   ],
   "stats": {
     "combat": [
-      { "label": "React/Next.js", "value": 10, "level": "MAX", "color": "bg-comic-cyan", "icon": "Zap" },
-      { "label": "State Mgmt", "value": 9, "level": "92", "color": "bg-comic-magenta", "icon": "Target" },
-      { "label": "Modern CSS", "value": 9, "level": "95", "color": "bg-comic-yellow", "icon": "Flame" },
-      { "label": "TypeScript", "value": 8, "level": "88", "color": "bg-white", "icon": "Shield" }
+      {
+        "label": "Frontend Engineering",
+        "value": 10,
+        "level": "MAX",
+        "color": "bg-comic-cyan",
+        "icon": "Zap"
+      },
+      {
+        "label": "UI Implementation",
+        "value": 9,
+        "level": "90",
+        "color": "bg-comic-magenta",
+        "icon": "Layout"
+      },
+      {
+        "label": "Mobile Development",
+        "value": 8,
+        "level": "82",
+        "color": "bg-comic-yellow",
+        "icon": "Smartphone"
+      },
+      {
+        "label": "API Integration",
+        "value": 8,
+        "level": "85",
+        "color": "bg-white",
+        "icon": "Workflow"
+      }
     ],
     "system": [
-      { "label": "Node/Express", "value": 8, "level": "80", "color": "bg-comic-magenta", "icon": "Flame" },
-      { "label": "GraphQL", "value": 7, "level": "75", "color": "bg-comic-cyan", "icon": "Zap" },
-      { "label": "Mobile (RN/KT)", "value": 8, "level": "84", "color": "bg-comic-yellow", "icon": "Smartphone" },
-      { "label": "Cloud/DevOps", "value": 6, "level": "60", "color": "bg-white", "icon": "Cloud" }
+      {
+        "label": "React Js",
+        "value": 10,
+        "level": "MAX",
+        "color": "bg-comic-magenta",
+        "icon": "Flame"
+      },
+      {
+        "label": "Next Js",
+        "value": 9,
+        "level": "92",
+        "color": "bg-comic-cyan",
+        "icon": "Zap"
+      },
+      {
+        "label": "TypeScript",
+        "value": 8,
+        "level": "86",
+        "color": "bg-comic-yellow",
+        "icon": "Code2"
+      },
+      {
+        "label": "React Native",
+        "value": 8,
+        "level": "84",
+        "color": "bg-white",
+        "icon": "Smartphone"
+      },
+      {
+        "label": "GraphQL",
+        "value": 7,
+        "level": "78",
+        "color": "bg-comic-magenta",
+        "icon": "GitBranch"
+      },
+      {
+        "label": "Node Js",
+        "value": 5,
+        "level": "58",
+        "color": "bg-comic-cyan",
+        "icon": "Server"
+      }
     ],
     "buffs": [
-      { "name": "Meme Specialist", "value": "MAX LUCK", "color": "text-comic-yellow", "icon": "SmilePlus" },
-      { "name": "Bekasi Residency", "value": "+100 Heat Res", "color": "text-comic-cyan" },
-      { "name": "Gymrat Mode", "value": "+50 Stamina", "color": "text-comic-magenta" }
+      {
+        "name": "Meme Specialist",
+        "value": "MAX LUCK",
+        "color": "text-comic-yellow",
+        "icon": "SmilePlus"
+      },
+      {
+        "name": "Coffe extrashot",
+        "value": "+100% Coding Speed",
+        "color": "text-comic-cyan"
+      },
+      {
+        "name": "Hipdut Music",
+        "value": "+200% Coding Speed",
+        "color": "text-comic-cyan"
+      },
     ]
   },
   "experience": [

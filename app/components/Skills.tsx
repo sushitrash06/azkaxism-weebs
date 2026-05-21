@@ -245,59 +245,40 @@ export default function Skills() {
                 level={stat.level}
               />
             ))}
-
-            <div className="mt-8 p-4 bg-white/5 border border-white/20">
-              <p className="font-mono text-[10px] text-white/40 uppercase mb-3 text-center tracking-widest underline underline-offset-4 decoration-comic-magenta">
-                Active Buffs
-              </p>
-              <div className="flex flex-col gap-2">
-                {buffs.map((buff) => {
-                  const BuffIcon = buff.icon
-                    ? iconMap[buff.icon] || SmilePlus
-                    : null;
-                  return (
-                    <div
-                      key={buff.name}
-                      className="bg-white/10 px-2 py-1 flex justify-between items-center"
-                    >
-                      <div className="flex items-center gap-2">
-                        {BuffIcon && (
-                          <BuffIcon size={12} className={buff.color} />
-                        )}
-                        <span className="font-mono text-[10px]">
-                          {buff.name}
-                        </span>
-                      </div>
-                      <span className={cn("font-mono text-[10px]", buff.color)}>
-                        {buff.value}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
           </div>
         </div>
         <div className="mt-16 pt-12 border-t border-white/10 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white/5 p-6 comic-border">
-            <div className="flex justify-between items-center mb-6">
-              <h4 className="font-comic text-xl text-comic-cyan uppercase">
-                Annual Focus Output
-              </h4>
-              <p className="font-mono text-3xl font-bold">88.5%</p>
-            </div>
-            <div className="h-12 flex items-end gap-1">
-              {[...Array(20)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ height: 0 }}
-                  whileInView={{ height: `${20 + Math.random() * 80}%` }}
-                  className="flex-1 bg-comic-cyan/30 border-t-2 border-comic-cyan"
-                />
-              ))}
+
+          <div className="mt-8 p-4 bg-white/5 border border-white/20">
+            <p className="font-mono text-[25px] text-white/40 uppercase mb-3 text-center tracking-widest underline underline-offset-4 decoration-comic-magenta">
+              Active Buffs
+            </p>
+            <div className="flex flex-col gap-2">
+              {buffs.map((buff) => {
+                const BuffIcon = buff.icon
+                  ? iconMap[buff.icon] || SmilePlus
+                  : null;
+                return (
+                  <div
+                    key={buff.name}
+                    className="bg-white/10 px-2 py-1 flex justify-between items-center"
+                  >
+                    <div className="flex items-center gap-2">
+                      {BuffIcon && (
+                        <BuffIcon size={12} className={buff.color} />
+                      )}
+                      <span className="font-mono text-[20px]">
+                        {buff.name}
+                      </span>
+                    </div>
+                    <span className={cn("font-mono text-[20px]", buff.color)}>
+                      {buff.value}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
           </div>
-
           <div className="bg-white/5 p-6 comic-border">
             <div className="flex justify-between items-center mb-6">
               <h4 className="font-comic text-xl text-comic-magenta uppercase">
