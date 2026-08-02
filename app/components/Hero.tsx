@@ -6,8 +6,9 @@ import CharacterHeader from "../assets/icon-hero.png";
 import { cn } from "../lib/utils";
 import Image from "next/image";
 import { CatIcon } from "lucide-react";
+import type { Profile } from "../lib/api";
 
-export default function Hero() {
+export default function Hero({ profile }: { profile?: Profile | null }) {
   return (
     <section
       id="about"
@@ -23,7 +24,7 @@ export default function Hero() {
             className="inline-block bg-comic-magenta px-4 py-1 comic-border -rotate-2 mb-6 self-start"
           >
             <span className="font-comic text-white text-lg md:text-xl tracking-widest uppercase">
-              Lv. 99 Frontend Dev
+              Lv. 99 {profile?.services?.[0] || 'Frontend Dev'}
             </span>
           </motion.div>
 
@@ -32,22 +33,32 @@ export default function Hero() {
             whileInView={{ opacity: 1, scale: 1 }}
             className="font-comic text-5xl sm:text-7xl md:text-9xl leading-[0.8] mb-8"
           >
-            AZKA <span className="text-comic-cyan">ANDYA</span>{" "}
-            <span className="block text-comic-black">SAFIRA</span>
+            {profile?.fullName ? (
+              <span className="text-comic-black uppercase">{profile.fullName}</span>
+            ) : (
+              <>
+                AZKA <span className="text-comic-cyan">ANDYA</span>{" "}
+                <span className="block text-comic-black">SAFIRA</span>
+              </>
+            )}
           </motion.h1>
 
           <div className="relative mb-8 md:mb-12">
             <p
-              className="font-mono text-lg md:text-xl max-w-xl leading-relaxed border-l-4 border-comic-black pl-6"
+              className="font-mono text-lg md:text-xl max-w-xl leading-relaxed border-l-4 border-comic-black pl-6 whitespace-pre-wrap"
               role="doc-subtitle"
             >
-              A{" "}
-              <span className="font-bold underline decoration-comic-yellow decoration-4">
-                Frontend Engineer
-              </span>
-              , problem solver, geeks, and realistic planner from{" "}
-              <span className="font-bold italic">Bekasi</span>. Bringing 4+
-              years of sleek interfaces and "Deploy & Pray" energy to the table.
+              {profile?.bio || (
+                <>
+                  A{" "}
+                  <span className="font-bold underline decoration-comic-yellow decoration-4">
+                    Frontend Engineer
+                  </span>
+                  , problem solver, geeks, and realistic planner from{" "}
+                  <span className="font-bold italic">Bekasi</span>. Bringing 4+
+                  years of sleek interfaces and "Deploy & Pray" energy to the table.
+                </>
+              )}
             </p>
           </div>
 
@@ -57,7 +68,7 @@ export default function Hero() {
             aria-label="Professional Specialties"
           >
             {[
-              { icon: MdTerminal, color: "text-comic-cyan", label: "Js Nerd" },
+              { icon: MdTerminal, color: "text-comic-cyan", label: profile?.headline || "Js Nerd" },
               { icon: CatIcon, color: "text-comic-magenta", label: "Weebs" },
               {
                 icon: MdLocalCafe,
@@ -90,12 +101,23 @@ export default function Hero() {
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             className="w-full h-full md:w-full md:h-full bg-transparent flex items-center justify-center shadow-[10px_10px_0px_0px_rgba(0,0,0,0)]"
           >
-            <Image
-              src={CharacterHeader}
-              alt="Azka Andya Safira - Frontend Developer Character Avatar"
-              className="w-full h-full object-contain"
-              priority
-            />
+            {profile?.profileImage ? (
+              <Image
+                src={profile.profileImage}
+                alt={`${profile.fullName} - Character Avatar`}
+                className="w-full h-full object-contain"
+                priority
+                width={600}
+                height={600}
+              />
+            ) : (
+              <Image
+                src={CharacterHeader}
+                alt="Azka Andya Safira - Frontend Developer Character Avatar"
+                className="w-full h-full object-contain"
+                priority
+              />
+            )}
           </motion.div>
         </div>
       </div>

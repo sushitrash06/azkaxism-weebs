@@ -94,7 +94,9 @@ const MeterBar = ({
   );
 };
 
-export default function Skills() {
+import type { Profile } from "../lib/api";
+
+export default function Skills({ profile }: { profile?: Profile | null }) {
   const { combat, system, buffs } = portfolioData.stats;
 
   return (
