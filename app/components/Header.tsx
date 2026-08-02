@@ -35,13 +35,14 @@ export default function Header() {
         </nav>
         
         <div className="flex items-center gap-4">
-          <motion.button 
+          <motion.a 
+            href="mailto:azkaa.p14@gmail.com?subject=Hey%20Azka!%20Let's%20work%20together"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="hidden sm:block bg-comic-yellow comic-border px-4 py-2 font-mono text-xs font-bold uppercase tracking-tighter shadow-[4px_4px_0px_0px_rgba(26,26,26,1)]"
           >
             HIRE ME!
-          </motion.button>
+          </motion.a>
 
           {/* Mobile Menu Toggle */}
           <button 
@@ -73,9 +74,12 @@ export default function Header() {
                   {link.name}
                 </a>
               ))}
-              <button className="bg-comic-yellow comic-border w-full py-4 mt-2 font-mono font-bold uppercase">
+              <a 
+                href="mailto:azkaa.p14@gmail.com?subject=Hey%20Azka!%20Let's%20work%20together" 
+                className="bg-comic-yellow comic-border w-full py-4 mt-2 font-mono font-bold uppercase text-center"
+              >
                 HIRE ME!
-              </button>
+              </a>
             </nav>
           </motion.div>
         )}
