@@ -19,6 +19,9 @@ export interface Profile {
 
 export interface ApiProject {
   id: string;
+  userId?: string;
+  experienceId?: string | null;
+  type?: string;
   title: string;
   description: string | null;
   thumbnail: string | null;

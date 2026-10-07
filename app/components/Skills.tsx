@@ -120,7 +120,7 @@ export default function Skills({ profile }: { profile?: Profile | null }) {
             <motion.h2
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              className="font-comic text-5xl md:text-8xl text-comic-yellow leading-none mb-2"
+              className="font-comic text-4xl sm:text-5xl md:text-8xl text-comic-yellow leading-none mb-2"
             >
               BASE STATS
             </motion.h2>
@@ -198,7 +198,7 @@ export default function Skills({ profile }: { profile?: Profile | null }) {
                         repeat: Infinity,
                         ease: "easeInOut",
                       }}
-                      className="w-80 h-80 md:w-full md:h-full bg-transparent flex items-center backdrop-blur-sm relative"
+                      className="w-full aspect-square max-w-[280px] md:max-w-none md:w-full md:h-full bg-transparent flex items-center backdrop-blur-sm relative"
                     >
                       <div className="absolute -bottom-4 bg-comic-black border-2 border-comic-yellow px-4 py-1">
                         <span className="font-mono text-xs font-bold uppercase">
@@ -252,7 +252,7 @@ export default function Skills({ profile }: { profile?: Profile | null }) {
         <div className="mt-16 pt-12 border-t border-white/10 grid grid-cols-1 md:grid-cols-2 gap-8">
 
           <div className="mt-8 p-4 bg-white/5 border border-white/20">
-            <p className="font-mono text-[25px] text-white/40 uppercase mb-3 text-center tracking-widest underline underline-offset-4 decoration-comic-magenta">
+            <p className="font-mono text-lg md:text-xl text-white/40 uppercase mb-3 text-center tracking-widest underline underline-offset-4 decoration-comic-magenta">
               Active Buffs
             </p>
             <div className="flex flex-col gap-2">
@@ -269,11 +269,11 @@ export default function Skills({ profile }: { profile?: Profile | null }) {
                       {BuffIcon && (
                         <BuffIcon size={12} className={buff.color} />
                       )}
-                      <span className="font-mono text-[20px]">
+                      <span className="font-mono text-sm md:text-lg">
                         {buff.name}
                       </span>
                     </div>
-                    <span className={cn("font-mono text-[20px]", buff.color)}>
+                    <span className={cn("font-mono text-sm md:text-lg", buff.color)}>
                       {buff.value}
                     </span>
                   </div>
@@ -283,10 +283,10 @@ export default function Skills({ profile }: { profile?: Profile | null }) {
           </div>
           <div className="bg-white/5 p-6 comic-border">
             <div className="flex justify-between items-center mb-6">
-              <h4 className="font-comic text-xl text-comic-magenta uppercase">
+              <h4 className="font-comic text-lg md:text-xl text-comic-magenta uppercase">
                 Meme Consumption
               </h4>
-              <p className="font-mono text-3xl font-bold text-comic-magenta">
+              <p className="font-mono text-xl md:text-3xl font-bold text-comic-magenta">
                 OVER 9000!
               </p>
             </div>
