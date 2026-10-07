@@ -82,7 +82,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
 
             {/* Description (Markdown) */}
             <div className="comic-panel p-6 md:p-10 bg-white">
-              <div className="prose prose-lg md:prose-xl prose-h1:font-comic prose-h2:font-comic prose-h3:font-comic prose-h1:uppercase prose-h2:uppercase prose-h3:uppercase prose-headings:text-comic-black prose-a:text-comic-cyan prose-a:font-bold hover:prose-a:text-comic-magenta prose-strong:text-comic-magenta prose-img:border-4 prose-img:border-comic-black prose-img:shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] max-w-none font-sans text-comic-black/80 leading-relaxed marker:text-comic-cyan">
+              <div className="comic-prose max-w-none">
                 {project.description ? (
                   <ReactMarkdown remarkPlugins={[remarkGfm]}>
                     {project.description}
@@ -99,13 +99,13 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
                 <h3 className="font-comic text-3xl md:text-4xl uppercase border-b-4 border-comic-black pb-2 inline-block">
                   Visual Assets
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {allImages.map((img, idx) => (
-                    <div key={idx} className="comic-border overflow-hidden bg-white relative group cursor-crosshair">
+                    <div key={idx} className="comic-panel overflow-hidden bg-white relative group aspect-[4/5]">
                       <img 
                         src={img} 
                         alt={`${project.title} screenshot ${idx + 1}`} 
-                        className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" 
+                        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]" 
                       />
                     </div>
                   ))}
