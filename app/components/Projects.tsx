@@ -81,7 +81,7 @@ export default function Projects({ apiProjects }: { apiProjects?: ApiProject[] }
   }, [apiProjects]);
 
   return (
-    <section id="projects" className="py-12 md:py-20 px-4 md:px-6 bg-comic-paper" aria-label="Project Portfolio">
+    <section id="projects" className="min-h-full py-12 md:py-20 px-4 md:px-8 bg-comic-paper" aria-label="Project Portfolio">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-10 md:mb-16 gap-6">
           <div className="text-center md:text-left">

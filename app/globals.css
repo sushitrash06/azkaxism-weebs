@@ -15,13 +15,57 @@
 }
 
 @layer base {
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+  
   body {
-    background-color: var(--color-comic-paper);
+    background-color: var(--color-comic-black);
     color: var(--color-comic-black);
     font-family: var(--font-sans);
   }
 }
 
+/* ─── App Shell Layout ─── */
+.app-shell {
+  position: fixed;
+  inset: 0;
+}
+
+.main-content {
+  position: relative;
+}
+
+/* Custom scrollbar for section containers */
+.section-container {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+.section-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.section-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.section-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+
+.section-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ─── Safe area for mobile bottom bar ─── */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* ─── Comic Styles ─── */
 .comic-border {
   border-width: 4px;
   border-color: var(--color-comic-black);

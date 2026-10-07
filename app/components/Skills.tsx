@@ -102,7 +102,7 @@ export default function Skills({ profile }: { profile?: Profile | null }) {
   return (
     <section
       id="skills"
-      className="py-12 md:py-24 px-4 md:px-6 bg-[#0E0E0E] text-white relative overflow-hidden"
+      className="min-h-full py-12 md:py-24 px-4 md:px-8 bg-[#0E0E0E] text-white relative overflow-hidden"
     >
       {/* Halftone texture background */}
       <div

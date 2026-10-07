@@ -12,10 +12,10 @@ export default function Hero({ profile }: { profile?: Profile | null }) {
   return (
     <section
       id="about"
-      className="py-10 md:py-20 px-4 md:px-6 overflow-hidden"
+      className="min-h-full py-10 md:py-16 px-4 md:px-8 overflow-hidden bg-comic-paper flex items-center"
       aria-label="About Section"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
         {/* Left Column - Intro */}
         <div className="lg:col-span-7 flex flex-col justify-center order-2 lg:order-1">
           <motion.div

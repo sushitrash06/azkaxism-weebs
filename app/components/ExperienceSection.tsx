@@ -75,7 +75,7 @@ export default function ExperienceSection({ apiExperiences }: { apiExperiences?:
   }, [apiExperiences]);
 
   return (
-    <section id="experience" className="py-12 md:py-24 px-4 md:px-6 bg-white text-white relative overflow-hidden">
+    <section id="experience" className="min-h-full py-12 md:py-24 px-4 md:px-8 bg-white text-white relative overflow-hidden">
       {/* Halftone texture background */}
       <div
         className="absolute inset-0 opacity-5 pointer-events-none"

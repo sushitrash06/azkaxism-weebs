@@ -96,7 +96,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="h-full overflow-hidden">{children}</body>
     </html>
   );
 }
