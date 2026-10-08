@@ -47,11 +47,14 @@ export interface ApiExperience {
 
 export async function getProfile(): Promise<Profile | null> {
   const profileId = process.env.NEXT_PUBLIC_PROFILE_ID;
-  const apiUrl = process.env.PROFILE_API_URL;
+  const apiUrl = process.env.NEXT_PUBLIC_BASE_URL;
   if (!profileId || !apiUrl) return null;
-  
+
   try {
-    const res = await fetch(`${apiUrl}`);
+    const res = await fetch(`${apiUrl}`, {
+      cache: 'no-store',
+      next: { revalidate: 0 }
+    });
     if (!res.ok) return null;
     return await res.json();
   } catch (error) {
@@ -63,9 +66,12 @@ export async function getProfile(): Promise<Profile | null> {
 export async function getExperiences(): Promise<ApiExperience[]> {
   const profileId = process.env.NEXT_PUBLIC_PROFILE_ID;
   if (!profileId) return [];
-  
+
   try {
-    const res = await fetch(`https://api.azkaxism.web.id/experiences/public/${profileId}`);
+    const res = await fetch(`https://api.azkaxism.web.id/experiences/public/${profileId}`, {
+      cache: 'no-store',
+      next: { revalidate: 0 }
+    });
     if (!res.ok) return [];
     return await res.json();
   } catch (error) {
@@ -77,9 +83,12 @@ export async function getExperiences(): Promise<ApiExperience[]> {
 export async function getProjects(): Promise<ApiProject[]> {
   const profileId = process.env.NEXT_PUBLIC_PROFILE_ID;
   if (!profileId) return [];
-  
+
   try {
-    const res = await fetch(`https://api.azkaxism.web.id/projects/public/${profileId}`);
+    const res = await fetch(`https://api.azkaxism.web.id/projects/public/${profileId}`, {
+      cache: 'no-store',
+      next: { revalidate: 0 }
+    });
     if (!res.ok) return [];
     return await res.json();
   } catch (error) {
@@ -91,9 +100,12 @@ export async function getProjects(): Promise<ApiProject[]> {
 export async function getProjectById(projectId: string): Promise<ApiProject | null> {
   const profileId = process.env.NEXT_PUBLIC_PROFILE_ID;
   if (!profileId) return null;
-  
+
   try {
-    const res = await fetch(`https://api.azkaxism.web.id/projects/public/${profileId}/${projectId}`);
+    const res = await fetch(`https://api.azkaxism.web.id/projects/public/${profileId}/${projectId}`, {
+      cache: 'no-store',
+      next: { revalidate: 0 }
+    });
     if (!res.ok) return null;
     return await res.json();
   } catch (error) {

@@ -1,7 +1,8 @@
 import AppShell from "./components/AppShell";
 import { getProfile, getExperiences, getProjects } from "./lib/api";
 
-export const revalidate = 60; // Optional: revalidate every 60s for the profile
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export default async function Home() {
   const profile = await getProfile();
